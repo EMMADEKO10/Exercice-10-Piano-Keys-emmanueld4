@@ -1,0 +1,34 @@
+//6.   Ajouter les gestionnaires d'événements à chaque note
+// // Write a loop that runs the array elements through the function
+// notes.forEach(function(note) {
+//   note.addEventListener('click', playNote);
+//   note.addEventListener('mousedown', changeKeyColor);
+//   note.addEventListener('mouseup', function(event) {
+//     event.target.style.backgroundColor = '';
+//   });
+// });
+
+// These variables store the buttons that progress the user through the lyrics
+
+
+// // Variables pour les boutons de progression dans la boîte à chansons
+// const nextOne = document.getElementById('next-one');
+// const nextTwo = document.getElementById('next-two');
+// const nextThree = document.getElementById('next-three');
+// const startOver = document.getElementById('start-over');
+
+// // Fonction pour passer à la deuxième partie de la chanson
+// function nextOneClick() {
+//   nextOne.hidden = true;
+//   nextTwo.hidden = false;
+//   const changeLyrics = document.getElementsByClassName('lyric')[0];
+//   changeLyrics.innerHTML = `♫ D D D# <br> D D D# <br> D D D# <br> G F <br> A# A# A# <br> A# A# A# <br> A# G F <br>`;
+// }
+
+// // Ajouter un gestionnaire d'événements pour le bouton nextOne
+// nextOne.addEventListener('click', nextOneClick);
+
+//7.  Write a loop that runs the array elements through the function
+
+
+// These variables store the buttons that progress the user through the lyrics
