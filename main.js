@@ -20,8 +20,6 @@ function keyReturn(event) {
 
 // Sélectionner toutes les sections de classe 'keynote'
 const keynotes = document.querySelectorAll('.keynote');
-const resetcolors = document.querySelectorAll('.keynote');
-
 
 // Ajouter un gestionnaire d'événements 'click' à chaque section de classe 'keynote'
 keynotes.forEach(function(keynote) {
@@ -35,6 +33,23 @@ keynotes.forEach(function(keynote) {
 
   });
 });
+// Sélectionner toutes les sections de classe 'black-keynote'
+const black_keynotes = document.querySelectorAll('.black-keynote');
+
+// Ajouter un gestionnaire d'événements 'click' à chaque section de classe 'black-keynote'
+
+black_keynotes.forEach(function(black_keynote) {
+  black_keynote.addEventListener('mousedown', function() {
+    // Changer la couleur de fond des sections #c-key.key et #e-key.key
+    this.parentNode.style.backgroundColor = 'red';
+
+    black_keynote.addEventListener('mouseup',function() {
+      this.parentNode.style.backgroundColor = '';            //J'ai utilisé this, vu que nous sommes dans l'object  ou la classe black-keynotes
+    });
+
+  });
+});
+
 
 
 //5.   Ajoute les gestionnaires d'événements pour chaque note  // // Écrivez une boucle qui fait passer les éléments du tableau à travers la fonction.
