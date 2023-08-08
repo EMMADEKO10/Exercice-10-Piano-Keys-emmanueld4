@@ -8,25 +8,40 @@ keys.forEach(function(key){
 //2.   Write named functions that change the color of the keys below
 
 // Function to change the background color of the keys
-function changeKeyColor(event) {
+function keyPlay(event) {
   event.target.style.backgroundColor = 'red';
 }
-//3.    Fonction qui renvoie la couleur de fond des touches à leur valeur par défaut lorsqu'elles sont relâchées avec une chaîne vide
+//3.   Fonction qui renvoie la couleur de fond des touches à leur valeur par défaut lorsqu'elles sont relâchées avec une chaîne vide
+
 function keyReturn(event) {
   event.target.style.backgroundColor = '';
 }
-//4.     Fonction qui joue la note correspondante lorsqu'une touche est cliquée
-function playNote() {
-  const note = document.getElementById(`${this.dataset.note}`);
-  note.currentTime = 0;
-  note.play();
-}
+
+
+// Sélectionner toutes les sections de classe 'keynote'
+const keynotes = document.querySelectorAll('.keynote');
+const resetcolors = document.querySelectorAll('.keynote');
+
+
+// Ajouter un gestionnaire d'événements 'click' à chaque section de classe 'keynote'
+keynotes.forEach(function(keynote) {
+  keynote.addEventListener('mousedown', function() {
+    // Changer la couleur de fond des sections #c-key.key et #e-key.key
+    keynote.parentNode.style.backgroundColor = 'red';
+
+    keynote.addEventListener('mouseup',function() {
+      keynote.parentNode.style.backgroundColor = '';
+    });
+
+  });
+});
+
 
 //5.   Ajoute les gestionnaires d'événements pour chaque note  // // Écrivez une boucle qui fait passer les éléments du tableau à travers la fonction.
 function addEventListenersToNotes(note) {
-  note.addEventListener('mousedown', changeKeyColor); // Lorsque la souris est enfoncée sur une touche, change sa couleur de fond
+  note.addEventListener('mousedown', keyPlay); // Lorsque la souris est enfoncée sur une touche, change sa couleur de fond
   note.addEventListener('mouseup', keyReturn); // Lorsque la souris est relâchée sur une touche, renvoie sa couleur de fond à sa valeur par défaut
-  note.addEventListener('click', playNote); // Lorsqu'une touche est cliquée, joue sa note correspondante
+   
 }
 
 //6.   Ajouter les gestionnaires d'événements à chaque note
